@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Operação Blackout</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+
+            <h1>🕵️ Operação Blackout</h1>
+
+            <p>Investigação Criminal Digital</p>
+
+            <div class="tempo">
+                Tempo: <span id="tempo">10:00</span>
+            </div>
+
+        </header>
+
+
+        <div class="informacoes">
+
+            <p>
+                🔎 Evidências:
+                <span id="contadorEvidencias">0/18</span>
+            </p>
+
+            <p>
+                ⚠️ Contradições:
+                <span id="contadorContradicoes">0</span>
+            </p>
+
+            <p>
+                ⭐ Pontos:
+                <span id="pontos">0</span>
+            </p>
+
+        </div>
+
+
+        <!-- INÍCIO DO CASO -->
+
+        <section id="inicio">
+
+            <h2>O Mistério do Laboratório 13</h2>
+
+            <p>
+                Na noite anterior à Feira de Profissões,
+                um protótipo desapareceu do laboratório.
+            </p>
+
+            <p>
+                Às 21h37 aconteceu um apagão que durou
+                11 minutos.
+            </p>
+
+            <p>Quando a energia voltou:</p>
+
+            <ul>
+
+                <li>💻 O servidor tinha sido acessado.</li>
+
+                <li>🔐 O sistema de segurança foi desativado.</li>
+
+                <li>📹 Algumas câmeras foram apagadas.</li>
+
+                <li>🧪 O protótipo desapareceu.</li>
+
+                <li>📱 Um celular desconhecido foi encontrado.</li>
+
+            </ul>
+
+            <p>
+                Não havia sinais de arrombamento e nenhuma
+                câmera mostrou alguém saindo com o protótipo.
+            </p>
+
+            <div class="alerta">
+
+                ❗ Como o protótipo desapareceu?
+
+            </div>
+
+            <button onclick="iniciarInvestigacao()">
+
+                🔎 Começar Investigação
+
+            </button>
+
+        </section>
+
+
+        <!-- CENTRAL DE INVESTIGAÇÃO -->
+
+        <section id="central" class="escondida">
+
+            <div class="menu">
+
+                <button onclick="abrirAba('cena')">
+                    🔎 Cena do Crime
+                </button>
+
+                <button onclick="abrirAba('suspeitos')">
+                    👥 Suspeitos
+                </button>
+
+                <button onclick="abrirAba('digital')">
+                    💻 Investigação Digital
+                </button>
+
+                <button onclick="abrirAba('cronologia')">
+                    🕐 Cronologia
+                </button>
+
+                <button onclick="abrirAba('evidencias')">
+                    🧩 Evidências
+                </button>
+
+                <button onclick="abrirAba('teoria')">
+                    🧠 Minha Teoria
+                </button>
+
+            </div>
+
+
+            <!-- CENA DO CRIME -->
+
+            <div id="cena" class="aba">
+
+                <h2>🔎 Cena do Crime</h2>
+
+                <p>
+                    Clique nos objetos para procurar pistas.
+                </p>
+
+
+                <div class="laboratorio">
+
+
+                    <button
+                        class="objeto computador"
+                        onclick="investigar('computador')">
+
+                        💻 Computador
+
+                    </button>
+
+
+                    <button
+                        class="objeto servidor"
+                        onclick="investigar('servidor')">
+
+                        🖥️ Servidor
+
+                    </button>
+
+
+                    <button
+                        class="objeto bancada"
+                        onclick="investigar('bancada')">
+
+                        🧪 Bancada
+
+                    </button>
+
+
+                    <button
+                        class="objeto porta"
+                        onclick="investigar('porta')">
+
+                        🚪 Porta
+
+                    </button>
+
+
+                    <button
+                        class="objeto celular"
+                        onclick="investigar('celular')">
+
+                        📱 Celular
+
+                    </button>
+
+
+                    <button
+                        class="objeto lixeira"
+                        onclick="investigar('lixeira')">
+
+                        🗑️ Lixeira
+
+                    </button>
+
+
+                </div>
+
+
+                <div id="resultadoCena"></div>
+
+            </div>
+
+
+            <!-- SUSPEITOS -->
+
+            <div id="suspeitos" class="aba escondida">
+
+                <h2>👥 Suspeitos</h2>
+
+                <p>
+                    Todos os suspeitos possuem alguma coisa
+                    que pode levantar dúvidas.
+                </p>
+
+
+                <div class="suspeitos">
+
+
+                    <div class="card">
+
+                        <h3>👩 Lara</h3>
+
+                        <p>Coordenadora</p>
+
+                        <button onclick="interrogar('Lara')">
+
+                            Interrogar
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <h3>👨 Miguel</h3>
+
+                        <p>Segurança</p>
+
+                        <button onclick="interrogar('Miguel')">
+
+                            Interrogar
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <h3>👨 Rafael</h3>
+
+                        <p>Programador</p>
+
+                        <button onclick="interrogar('Rafael')">
+
+                            Interrogar
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <h3>👩 Sofia</h3>
+
+                        <p>Pesquisadora</p>
+
+                        <button onclick="interrogar('Sofia')">
+
+                            Interrogar
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <h3>👨 Daniel</h3>
+
+                        <p>Visitante</p>
+
+                        <button onclick="interrogar('Daniel')">
+
+                            Interrogar
+
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+                <div id="interrogatorio"></div>
+
+            </div>
+
+
+            <!-- INVESTIGAÇÃO DIGITAL -->
+
+            <div id="digital" class="aba escondida">
+
+                <h2>💻 Investigação Digital</h2>
+
+                <p>
+                    Analise os registros encontrados
+                    nos computadores e sistemas.
+                </p>
+
+
+                <div class="botoes">
+
+
+                    <button onclick="analisarDigital('wifi')">
+
+                        📡 Wi-Fi
+
+                    </button>
+
+
+                    <button onclick="analisarDigital('senha')">
+
+                        🔐 Senha
+
+                    </button>
+
+
+                    <button onclick="analisarDigital('camera')">
+
+                        📹 Câmeras
+
+                    </button>
+
+
+                    <button onclick="analisarDigital('servidor')">
+
+                        🖥️ Servidor
+
+                    </button>
+
+
+                    <button onclick="analisarDigital('mensagem')">
+
+                        📩 Mensagens
+
+                    </button>
+
+
+                    <button onclick="analisarDigital('arquivo')">
+
+                        📁 Arquivo Apagado
+
+                    </button>
+
+
+                </div>
+
+
+                <div id="resultadoDigital"></div>
+
+            </div>
+
+
+            <!-- CRONOLOGIA -->
+
+            <div id="cronologia" class="aba escondida">
+
+                <h2>🕐 Cronologia</h2>
+
+                <p>
+                    Clique nos acontecimentos na ordem
+                    em que você acredita que aconteceram.
+                </p>
+
+
+                <div class="cronologia">
+
+
+                    <button onclick="evento(0)">
+
+                        ⚡ Apagão - 21h37
+
+                    </button>
+
+
+                    <button onclick="evento(1)">
+
+                        📩 Mensagem - 21h32
+
+                    </button>
+
+
+                    <button onclick="evento(2)">
+
+                        🔐 Sistema desativado - 21h39
+
+                    </button>
+
+
+                    <button onclick="evento(3)">
+
+                        📹 Câmera interrompida - 21h40
+
+                    </button>
+
+
+                    <button onclick="evento(4)">
+
+                        🧪 Protótipo removido - 21h44
+
+                    </button>
+
+
+                    <button onclick="evento(5)">
+
+                        ⚡ Energia voltou - 21h48
+
+                    </button>
+
+
+                </div>
+
+
+                <div id="resultadoTempo"></div>
+
+            </div>
+
+
+            <!-- EVIDÊNCIAS -->
+
+            <div id="evidencias" class="aba escondida">
+
+                <h2>🧩 Evidências Encontradas</h2>
+
+                <p>
+                    Aqui aparecem todas as pistas que você
+                    encontrou durante a investigação.
+                </p>
+
+
+                <div id="listaEvidencias">
+
+                    <p>
+                        Nenhuma evidência encontrada.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- TEORIA FINAL -->
+
+            <div id="teoria" class="aba escondida">
+
+                <h2>🧠 Minha Teoria</h2>
+
+                <p>
+                    Depois de investigar o caso,
+                    escolha o que você acredita que aconteceu.
+                </p>
+
+
+                <label>
+                    Quem planejou o crime?
+                </label>
+
+
+                <select id="planejador">
+
+                    <option value="">
+                        Escolha
+                    </option>
+
+                    <option value="Lara">
+                        Lara
+                    </option>
+
+                    <option value="Miguel">
+                        Miguel
+                    </option>
+
+                    <option value="Rafael">
+                        Rafael
+                    </option>
+
+                    <option value="Sofia">
+                        Sofia
+                    </option>
+
+                    <option value="Daniel">
+                        Daniel
+                    </option>
+
+                </select>
+
+
+                <label>
+                    Quem executou o crime?
+                </label>
+
+
+                <select id="executor">
+
+                    <option value="">
+                        Escolha
+                    </option>
+
+                    <option value="Lara">
+                        Lara
+                    </option>
+
+                    <option value="Miguel">
+                        Miguel
+                    </option>
+
+                    <option value="Rafael">
+                        Rafael
+                    </option>
+
+                    <option value="Sofia">
+                        Sofia
+                    </option>
+
+                    <option value="Daniel">
+                        Daniel
+                    </option>
+
+                </select>
+
+
+                <label>
+                    Quem ajudou?
+                </label>
+
+
+                <select id="ajudante">
+
+                    <option value="">
+                        Escolha
+                    </option>
+
+                    <option value="Lara">
+                        Lara
+                    </option>
+
+                    <option value="Miguel">
+                        Miguel
+                    </option>
+
+                    <option value="Rafael">
+                        Rafael
+                    </option>
+
+                    <option value="Sofia">
+                        Sofia
+                    </option>
+
+                    <option value="Daniel">
+                        Daniel
+                    </option>
+
+                    <option value="Ninguém">
+                        Ninguém
+                    </option>
+
+                </select>
+
+
+                <label>
+                    Qual foi o motivo?
+                </label>
+
+
+                <select id="motivo">
+
+                    <option value="">
+                        Escolha
+                    </option>
+
+                    <option value="roubo">
+                        Roubar o protótipo
+                    </option>
+
+                    <option value="venda">
+                        Vender o protótipo
+                    </option>
+
+                    <option value="encobrir">
+                        Encobrir uma descoberta
+                    </option>
+
+                    <option value="sabotagem">
+                        Sabotar a feira
+                    </option>
+
+                </select>
+
+
+                <button onclick="resolverCaso()">
+
+                    ⚖️ Apresentar Minha Teoria
+
+                </button>
+
+
+                <div id="resultadoFinal"></div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
